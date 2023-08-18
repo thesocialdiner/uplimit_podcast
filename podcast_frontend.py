@@ -3,8 +3,7 @@ import json
 import os
 import modal  # Import Modal library
 
-def create_dict_from_json_files():
-    folder_path = "."  # or specify the actual path to the JSON files
+def create_dict_from_json_files(folder_path):
     json_files = [f for f in os.listdir(folder_path) if f.endswith('.json')]
     data_dict = {}
 
@@ -16,6 +15,7 @@ def create_dict_from_json_files():
             data_dict[podcast_name] = podcast_info
 
     return data_dict
+
 
 def process_podcast_info(url):
     f = modal.Function.lookup("corise-podcast-project", "process_podcast")
