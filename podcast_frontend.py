@@ -3,20 +3,18 @@ import json
 import os
 import modal  # Import Modal library
 
-def load_podcast(file_path):
-    with open(file_path, 'r') as file:
-        data = json.load(file)
-    return data
-
-def create_dict_from_json_files(folder_path):
+def create_dict_from_json_files():
+    folder_path = "."  # or specify the actual path to the JSON files
     json_files = [f for f in os.listdir(folder_path) if f.endswith('.json')]
     data_dict = {}
+
     for file_name in json_files:
         file_path = os.path.join(folder_path, file_name)
         with open(file_path, 'r') as file:
             podcast_info = json.load(file)
             podcast_name = podcast_info['podcast_details']['podcast_title']
             data_dict[podcast_name] = podcast_info
+
     return data_dict
 
 def process_podcast_info(url):
