@@ -55,13 +55,8 @@ def main():
     podcast_option = st.sidebar.selectbox("Choose a podcast:", list(available_podcasts.keys()) + ["Custom URL"])
 
     # Load available podcasts
-    #available_podcasts = create_dict_from_json_files(file_path)  # Load JSON files from current directory
-    #Litterally Load available podcasts
-    available_podcasts = {
-        "Podcast 1": load_podcast("podcast-1.json"),
-        "Podcast 2": load_podcast("podcast-2.json"),
-        "Podcast 3": load_podcast("podcast-3.json"),
-    }
+    available_podcasts = create_dict_from_json_files(file_path)  # Load JSON files from current directory
+    
     # Heading above checkboxes
     if podcast_option != "Custom URL":
         st.header("Select podcasts to be summarized in a weekly newsletter!")
