@@ -8,7 +8,7 @@ def load_podcast(file_path):
         data = json.load(file)
     return data
 
-def create_dict_from_json_files('file_path'):
+def create_dict_from_json_files('https://github.com/thesocialdiner/uplimit_podcast'):
     json_files = [f for f in os.listdir(folder_path) if f.endswith('.json')]
     print(f"JSON files found in {folder_path}: {json_files}")  # Debugging print statement
     data_dict = {}
