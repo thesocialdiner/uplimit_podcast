@@ -35,7 +35,7 @@ def main():
     podcast_option = st.sidebar.selectbox("Choose a podcast:", ["Podcast 1", "Podcast 2", "Podcast 3", "Custom URL"])
 
     # Fun and special note for custom URL option
-    st.sidebar.markdown(":tada: **Hey, adventurer!** :tada:")
+    st.sidebar.markdown(":tada: **Hey, Listener!** :tada:")
     st.sidebar.markdown("Feeling explorative? Choose 'Custom URL' from the dropdown above and enter your very own podcast URL! Then we'll process a summary of the latest episode for you! :sparkles:")
 
     # Input field for custom Podcast URL
