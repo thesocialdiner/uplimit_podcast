@@ -30,6 +30,9 @@ def process_podcast_info(url):
 def main():
     st.title("Your Podcast Pal - AI Generated Summaries To Save You Time")
 
+    # Email input field
+    email_address = st.sidebar.text_input("Enter your email address:")
+
     # Sidebar to select podcast RSS feed or enter custom URL
     st.sidebar.header("Select Podcast RSS Feed")
     podcast_option = st.sidebar.selectbox("Choose a podcast:", ["Podcast 1", "Podcast 2", "Podcast 3", "Custom URL"])
@@ -70,6 +73,7 @@ def main():
     if st.sidebar.button("Subscribe"):
         # Create text file with selected summaries
         with open("selected_summaries.txt", "w") as file:
+            file.write(f"Email Address: {email_address}\n")  # Save email address to file
             for name, summary in selected_podcasts.items():
                 file.write(f"{name}: {summary}\n")
         st.sidebar.success("Subscribed! Summaries saved to selected_summaries.txt")
