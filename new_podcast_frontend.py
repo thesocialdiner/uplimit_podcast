@@ -1,9 +1,14 @@
 import streamlit as st
 import json
 
-file_path_1 = 'path/to/podcast-1.json'
-file_path_2 = 'path/to/podcast-2.json'
-file_path_3 = 'path/to/podcast-3.json'
+def load_podcast(file_path):
+    with open(file_path, 'r') as file:
+        data = json.load(file)
+    return data
+    
+(file_path)_1 = 'path/to/podcast-1.json'
+(file_path)_2 = 'path/to/podcast-2.json'
+(file_path)_3 = 'path/to/podcast-3.json'
 
 def load_podcast_titles():
     json_files = [file_path_1, file_path_2, file_path_3]
