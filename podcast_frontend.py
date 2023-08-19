@@ -69,13 +69,16 @@ def main():
     # Load the selected podcast data from dropdown (only if "Custom URL" is not selected)
     if podcast_option in available_podcasts and podcast_option != "Custom URL":
         podcast_data = available_podcasts[podcast_option]
-        # ... Rest of the code for displaying podcast details ...
-
-    elif podcast_option == "Custom URL" and custom_url:
-        podcast_data = process_podcast_info(custom_url)
-        # ... Rest of the code for displaying podcast details ...
-
-    else:
+        cols = st.columns([1, 1])  # Create two columns
+        # Column 1: Image, Podcast Title, Episode Title, Guest, and Summary
+        cols[0].image(podcast_data["podcast_details"]["episode_image"], use_column_width=True)
+        cols[0].header(podcast_data["podcast_details"]["podcast_title"])
+        cols[0].subheader(podcast_data["podcast_details"]["episode_title"])
+        cols[0].markdown("**Guest:** " + podcast_data["podcast_guest"])
+        cols[0].markdown("**Summary:** " + podcast_data["podcast_summary"])
+        # Column 2: Highlights
+        cols[1].markdown("**Highlights:** " + podcast_data["podcast_highlights"])
+    elif podcast_option == "Custom URL":
         st.write("Custom URL processing not yet implemented.")
 
 if __name__ == "__main__":
