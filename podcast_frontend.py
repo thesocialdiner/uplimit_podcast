@@ -44,7 +44,7 @@ def main():
         custom_url = st.sidebar.text_input("Enter Podcast URL:")
 
     # Load available podcasts
-    available_podcasts = create_dict_from_json_files(folder_path)  # Load JSON files from current directory
+    available_podcasts = create_dict_from_json_files(file_path)  # Load JSON files from current directory
     #Litterally Load available podcasts
     #available_podcasts = {
     #    "Podcast 1": load_podcast("podcast-1.json"),
