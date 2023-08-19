@@ -55,8 +55,6 @@ def main():
     if podcast_option != "Custom URL":
         st.header("Select podcasts to be summarized in a weekly newsletter!")
 
-    # Email input field
-    email_address = st.sidebar.text_input("Enter your email address:")
 
     # Display available podcasts with checkboxes (only if "Custom URL" is not selected)
     selected_podcasts = {}
@@ -78,6 +76,9 @@ def main():
             for name, summary in selected_podcasts.items():
                 file.write(f"{name}: {summary}\n")
         st.sidebar.success("Subscribed! Summaries saved to selected_summaries.txt")
+
+    # Email input field
+    email_address = st.sidebar.text_input("Enter your email address:")
 
     # Load the selected podcast data from dropdown (only if "Custom URL" is not selected)
     if podcast_option in available_podcasts and podcast_option != "Custom URL":
