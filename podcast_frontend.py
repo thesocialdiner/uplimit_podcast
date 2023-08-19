@@ -30,9 +30,6 @@ def process_podcast_info(url):
 def main():
     st.title("Your Podcast Pal - AI Generated Summaries To Save You Time")
 
-    # Email input field
-    email_address = st.sidebar.text_input("Enter your email address:")
-
     # Sidebar to select podcast RSS feed or enter custom URL
     st.sidebar.header("Select Podcast RSS Feed")
     podcast_option = st.sidebar.selectbox("Choose a podcast:", ["Podcast 1", "Podcast 2", "Podcast 3", "Custom URL"])
@@ -58,6 +55,9 @@ def main():
     if podcast_option != "Custom URL":
         st.header("Select podcasts to be summarized in a weekly newsletter!")
 
+    # Email input field
+    email_address = st.sidebar.text_input("Enter your email address:")
+
     # Display available podcasts with checkboxes (only if "Custom URL" is not selected)
     selected_podcasts = {}
     if podcast_option != "Custom URL":
@@ -66,6 +66,7 @@ def main():
             if selected:
                 selected_podcasts[name] = available_podcasts[name]["podcast_summary"]
 
+    
     # Sidebar: Display selected podcasts and Subscribe button
     st.sidebar.header("Selected Podcasts for Newsletter")
     for name in selected_podcasts.keys():
