@@ -6,9 +6,9 @@ def load_podcast(file_path):
         data = json.load(file)
     return data
     
-(file_path)_1 = 'path/to/podcast-1.json'
-(file_path)_2 = 'path/to/podcast-2.json'
-(file_path)_3 = 'path/to/podcast-3.json'
+file_path_1 = 'https://github.com/thesocialdiner/uplimit_podcast/blob/main/podcast-1.json'
+file_path_2 = 'https://github.com/thesocialdiner/uplimit_podcast/blob/main/podcast-2.json'
+file_path_3 = 'https://github.com/thesocialdiner/uplimit_podcast/blob/main/podcast-3.json'
 
 def load_podcast_titles():
     json_files = [file_path_1, file_path_2, file_path_3]
