@@ -94,7 +94,7 @@ def main():
         cols[0].markdown("**Highlights:** " + podcast_data["podcast_highlights"])
         #Key Insights:
         # Column 2: Key Items
-        #cols[1].markdown("**Highlights:** " + podcast_data["Key Insights:")
+        cols[1].markdown("**Highlights:** " + podcast_data["Key Insights:")
     elif podcast_option == "Custom URL":
         st.write("Custom URL processing not yet implemented.")
 
